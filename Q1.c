@@ -17,7 +17,4 @@ void welcome_message(){
         perror("Write");
         exit(EXIT_FAILURE);
     }
-
-    close(STDOUT_FILENO);
-    exit(EXIT_SUCCESS);
 }
