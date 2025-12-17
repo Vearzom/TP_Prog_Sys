@@ -4,6 +4,6 @@
 #define EXIT "exit"
 #define SIGNAL "signal"
 
-void print_status(int status);
+void print_status(int status, float time);
 
 #endif
