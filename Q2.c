@@ -7,9 +7,7 @@
 
 #include "Q2.h"
 
-#define MAX_LINE_SIZE 128
-
-// execute the given command  
+// Executes the given command  
 
 void execute_cmd(){
     char buffer_cmd_line[MAX_LINE_SIZE] = {0};
@@ -18,7 +16,7 @@ void execute_cmd(){
         perror("Read");
         exit(EXIT_FAILURE);
     }
-    buffer_cmd_line[nb_char_read-1]=0;
+    buffer_cmd_line[nb_char_read-1]=0; // Because /n doesn't belong to the command
 
     int process_id = fork();
     if(process_id == 0){

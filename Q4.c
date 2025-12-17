@@ -4,16 +4,10 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
-#include <string.h>
 
 #include "Q4.h"
 
-
-#define PERMANENT "enseash "
-#define SIZE_PERMANENT 9
-#define BUF_SIZE 300
-#define EXIT "exit"
-#define SIGNAL "signal"
+//Displays the status of the command
 
 void print_status(int status, float time){
     char buf[BUF_SIZE];

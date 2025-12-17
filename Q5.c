@@ -7,10 +7,8 @@
 #include "Q5.h"
 #include <time.h>
 
-#define BUFFER_SIZE 128
-#define EXIT_COMMAND "exit"
-#define ERROR_READ "Erreur lors de la lecture de la commande\n"
-#define ERROR_EXEC "Erreur lors de l'execution de la commande\n"
+
+// Executes the command line and displays the execution time and the exit status
 
 float execute_command_with_exit(int* status){  
     struct timespec Start_time;
@@ -24,7 +22,7 @@ float execute_command_with_exit(int* status){
         exit(EXIT_FAILURE);
     }
     buffer_command[number_char-1]='\0';
-    if (strcmp(buffer_command, EXIT_COMMAND)==0 || buffer_command[0]=='\0') { //Exit on 'exit' command or ^D
+    if (strcmp(buffer_command, EXIT_COMMAND)==0 || buffer_command[0]=='\0') { //Exit on 'exit' command or crtl^D
         exit(EXIT_SUCCESS);
     }
     if(fork() == 0){
@@ -41,6 +39,6 @@ float execute_command_with_exit(int* status){
     }
     wait(status);
     clock_gettime(CLOCK_REALTIME, &End_time);
-    float Total_time = abs(End_time.tv_sec - Start_time.tv_sec)/1000 + abs(End_time.tv_nsec - Start_time.tv_nsec) / 1000000.0;
+    float Total_time = abs(End_time.tv_sec - Start_time.tv_sec)/NS_TO_MS + abs(End_time.tv_nsec - Start_time.tv_nsec) / S_TO_MS;
     return(Total_time);
 }
