@@ -3,6 +3,6 @@
 
 #define SEPARATOR " "
 
-void execute_complex_cmd(char *argv);
+char ** execute_complex_cmd(int * argc, char* command);
 
 #endif
