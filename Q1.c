@@ -7,13 +7,20 @@
 
 #include "Q1.h"
 
-#define SHELL_NAME "enseash %"
-#define MESSAGE "Bienvenue dans le Shell ENSEA \nPour quitter, tapez 'exit'. \nenseash%"
-#define SIZE_MESSAGE 68
+#define MESSAGE "Bienvenue dans le Shell ENSEA \nPour quitter, tapez 'exit'.\n"
+#define PERMANENT "enseash% "
+#define SIZE_MESSAGE 59
+#define SIZE_PERMANENT 9
 
 void welcome_message(){
-
     if(write(STDOUT_FILENO, MESSAGE, SIZE_MESSAGE) == -1){
+        perror("Write");
+        exit(EXIT_FAILURE);
+    }
+}
+
+void permanent_message(){
+    if(write(STDOUT_FILENO, PERMANENT, SIZE_PERMANENT) == -1){
         perror("Write");
         exit(EXIT_FAILURE);
     }

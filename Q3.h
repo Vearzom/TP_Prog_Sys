@@ -1,6 +1,6 @@
-#ifndef Q2_H
-#define Q2_H
+#ifndef Q3_H
+#define Q3_H
 
-void execute_cmd_final();
+int execute_cmd_final();
 
 #endif
