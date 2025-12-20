@@ -12,7 +12,7 @@
 void print_status(int status, float time){
     char buf[BUF_SIZE];
     
-    int temp = snprintf(buf, BUF_SIZE, "%s[%s:%d | %2f]%%", PERMANENT, WIFEXITED(status)?EXIT:SIGNAL,
+    int temp = snprintf(buf, BUF_SIZE, "%s[%s:%d | %2f]%%", PERMANENT_PROMPT, WIFEXITED(status)?EXIT:SIGNAL,
              WIFEXITED(status)?WEXITSTATUS(status):WTERMSIG(status), time);
     if(write(STDOUT_FILENO, buf, temp) == -1){
         perror("Write");

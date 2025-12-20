@@ -2,7 +2,8 @@
 #define Q6_H
 
 #define SEPARATOR " "
+#define MAX_ARGS 32
 
-char ** execute_complex_cmd(int * argc, char* command);
+void decoupe();
 
 #endif

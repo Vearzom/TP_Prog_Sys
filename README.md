@@ -24,4 +24,4 @@
 
 #### Question 6
 
-<p>  </p>
+<p> Implemented by splitting the command line into arguments stored in an array terminated by NULL, then using execvp to execute the command with its parameters. </p>
